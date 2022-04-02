@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #011701;
+}
+
+.header {
+  width: 100%;
+  background-color: #000;
+}
+
+.header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  max-width: 150px;
+}
+
+.logo img {
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 15px 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  overflow: hidden;
+}
+.card:hover > .card__content {
+  top: 0;
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card__content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.911);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: all .2s ease-in-out;
+}
+
+.card__content > span {
+  margin-bottom: 20px;
+}
+
+.card__name {
+  margin-bottom: 30px;
+}
+
+.card__actor-name span {
+  margin-left: 5px;
+}
+
+.card__nickname span {
+  margin-left: 5px;
+}
+
+.card__status span {
+  margin-left: 5px;
+}
+
+.search {
+  max-width: 300px;
+}
+
+.search input {
+  width: 300px;
+  outline: none;
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.loading {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: 100px auto;
+}
+
+
+
+@media (max-width: 800px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .card img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+  }
+
+  .header__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header__container .logo {
+    margin-bottom: 20px;
+  }
+}
